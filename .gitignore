@@ -1,3 +1,8 @@
+# pycharm and system directories
 \.idea
-readme_example.md
+\__pycache__
 \venv
+
+# my "extra" files
+readme_example.md
+test.py
