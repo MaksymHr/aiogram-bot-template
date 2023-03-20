@@ -1,6 +1,7 @@
 import asyncio
 
 from aiogram import Bot, Dispatcher
+from dotenv import load_dotenv
 
 
 async def main():
@@ -15,7 +16,14 @@ async def main():
 
     # TODO: integrate logging
 
-    bot = Bot(token="12345:qwerty")
+    # loading content from .env file
+    load_dotenv()
+
+    # below creating or loading main bot variables
+    from config import BotConfig
+    config = BotConfig()
+
+    bot = Bot(token=config.bot_token.get_secret_value())
     dp = Dispatcher()
 
     # start polling server
