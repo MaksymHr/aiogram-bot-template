@@ -8,8 +8,16 @@ class BotConfig(BaseSettings):
     using variable.get_secret_value().
     """
 
-    bot_token: SecretStr
+    BOT_TOKEN: SecretStr
 
-    class AdditionalConfig:
-        env_file = ".env"
+    class Config:
+
+        # fields = {
+        #     "BOT_TOKEN": {
+        #         'env': "BOT_TOKEN"
+        #     }
+        # }
+
+        # if you move .env file you should rewrite path below.
+        env_file = "settings\\.env"
         encoding = "utf-8"

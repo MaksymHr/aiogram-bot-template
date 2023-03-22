@@ -20,10 +20,10 @@ async def main():
     load_dotenv()
 
     # below creating or loading main bot variables
-    from config import BotConfig
+    from settings import BotConfig
     config = BotConfig()
 
-    bot = Bot(token=config.bot_token.get_secret_value())
+    bot = Bot(token=config.BOT_TOKEN.get_secret_value())
     dp = Dispatcher()
 
     # start polling server
