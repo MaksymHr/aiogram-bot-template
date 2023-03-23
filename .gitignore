@@ -3,6 +3,10 @@
 \__pycache__
 \venv
 
+# folder with log files
+\logs
+logs.*
+
 # my "extra" files
 readme_example.md
 **/test.py

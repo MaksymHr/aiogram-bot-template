@@ -1,4 +1,5 @@
 import asyncio
+import logging
 
 from aiogram import Bot, Dispatcher
 from dotenv import load_dotenv
@@ -14,7 +15,12 @@ async def main():
     :return:
     """
 
-    # TODO: integrate logging
+    # TODO: change logging library to journald
+
+    # Activate logging
+    from settings import activate_logging
+    await activate_logging()
+    logging.info("Bot starting...")
 
     # loading content from .env file
     load_dotenv()
@@ -29,6 +35,8 @@ async def main():
     # start polling server
     # TODO: create function on_startup to notice admins
     await dp.start_polling(bot)
+
+    logging.info("Bot had been started successfully.")
 
 
 # Bot start
